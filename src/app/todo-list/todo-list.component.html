@@ -1,0 +1,30 @@
+<div class="todo-container container">
+  <div class="panel">
+
+    <div class="todo-list-heading-container">
+      <h2 class="todo-list-heading panel-heading danger">Task List</h2>
+    </div>
+
+    <div *ngFor="let task of tasks; index as i" class="panel-body" routerLink="/todo-list/{{ task.assignee }}">
+
+      <span class="col-md-2">
+        {{ i + 1 }}
+      </span>
+      <span class="col-md-5">
+        {{ task.task }}
+      </span>
+      <span class="col-md-2">
+        {{ task.assignee }}
+      </span>
+      <span class="col-md-2">
+        <button (click)="removeTask(task.id)" class=" btn btn-danger">Remove Task</button>
+      </span>
+
+    </div>
+
+  </div>
+
+  <app-modify-task [tasks]="tasks"></app-modify-task>
+
+</div>
+

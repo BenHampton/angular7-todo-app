@@ -1,0 +1,34 @@
+<div>
+  <form [formGroup]="profileForm" (ngSubmit)="onSubmitAddTask()">
+    <div class="task-input-container col-md-12 col-sm-12 col-xs-12">
+      <div class="col-md-6 col-sm-6 col-xs-6 text-right">
+        <label>Task:
+          <input type="text"
+                 placeholder="enter task"
+                 formControlName="newTask"
+                 class="input-task"
+          />
+        </label>
+      </div>
+      <div class="col-md-6 col-sm-6 col-xs-6 text-left">
+        <label >Assignee:
+          <input type="text"
+                 placeholder="assign to"
+                 formControlName="newAssignee"
+                 class="input-assign"
+          />
+        </label>
+      </div>
+    </div>
+
+    <div class="input-button-container col-md-12">
+      <button type="submit"
+              [disabled]="!profileForm.valid"
+              class="input-task-button btn btn-danger">
+        Add Task
+      </button>
+    </div>
+
+
+  </form>
+</div>
